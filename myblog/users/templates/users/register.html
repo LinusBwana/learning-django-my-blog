@@ -5,5 +5,14 @@
 {% endblock title %}
 
 {% block content %}
-    <h2>Create An Account</h2>
+<div class="d-flex justify-content-center align-items-center">
+    <div class="form-container">
+        <h2 class="register-account">Create An Account</h2>
+        <form class="form-with-validation" action="{% url 'users:register' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-success mt-2 form-submit">Register</button>
+        </form>
+    </div>
+</div>
 {% endblock content %}
