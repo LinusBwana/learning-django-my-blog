@@ -145,3 +145,6 @@ ul.errorlist {
     font-size: 0.9rem;
 }
 
+.logout-button{
+    border: none;
+}

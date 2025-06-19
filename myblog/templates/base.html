@@ -17,11 +17,15 @@
     <nav class="navbar navbar-dark bg-success py-0.5">
         <div class="navbar-nav d-flex flex-row gap-3 ms-auto ms-3 me-3 fs-5">
             {% with request.resolver_match.url_name as current %}
-            <a class="nav-link {% if current == 'homepage' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
-            <a class="nav-link {% if current == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
-            <a class="nav-link {% if current == 'posts' %}active{% endif %}" href="{% url 'posts:posts' %}">Posts</a>
-            <a class="nav-link {% if current == 'login' %}active{% endif %}" href="{% url 'users:login' %}">Login</a>
-            <a class="nav-link {% if current == 'register' %}active{% endif %}" href="{% url 'users:register' %}">Register</a>
+                <a class="nav-link {% if current == 'homepage' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
+                <a class="nav-link {% if current == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+                <a class="nav-link {% if current == 'posts' %}active{% endif %}" href="{% url 'posts:posts' %}">Posts</a>
+                <a class="nav-link {% if current == 'login' %}active{% endif %}" href="{% url 'users:login' %}">Login</a>
+                <a class="nav-link {% if current == 'register' %}active{% endif %}" href="{% url 'users:register' %}">Register</a>
+                <form method="post" action="{% url 'users:logout' %}">
+                    {% csrf_token %}
+                    <button class="logout-button nav-link {% if current == 'logout' %}active{% endif %}">Logout</button>
+                </form>
             {% endwith %}
         </div>   
     </nav>
