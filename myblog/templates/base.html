@@ -20,6 +20,7 @@
             <a class="nav-link {% if current == 'homepage' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
             <a class="nav-link {% if current == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
             <a class="nav-link {% if current == 'posts' %}active{% endif %}" href="{% url 'posts:posts' %}">Posts</a>
+            <a class="nav-link {% if current == 'login' %}active{% endif %}" href="{% url 'users:login' %}">Login</a>
             <a class="nav-link {% if current == 'register' %}active{% endif %}" href="{% url 'users:register' %}">Register</a>
             {% endwith %}
         </div>   

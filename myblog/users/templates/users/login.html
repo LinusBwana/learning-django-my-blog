@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    User Login
+{% endblock title %}
+
+{% block content %}
+
+    <div class="login-form">
+        <h2 class="login-account">User Login</h2>
+        <form class="form-with-validation" action="{% url 'users:login' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-success mt-2 form-submit">Login</button>
+        </form>
+    </div>
+
+{% endblock content %}

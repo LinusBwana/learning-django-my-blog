@@ -55,6 +55,7 @@ a:hover {
     background: linear-gradient(135deg, #ffffff, #f4f7ff);
     padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 13px;
 }
 .form-container:hover {
     transform: translateY(-5px);
@@ -66,12 +67,35 @@ a:hover {
     display: block;
     margin-bottom: 5px;
     color: #222;
+    font-size: 13px;
 }
 
-.register-account{
+.login-form {
+    border: solid 2px;
+    border-color: #44B78B;
+    box-shadow: 3px 3px 10px red;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f4f7ff);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+}
+.login-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 3px 3px 10px rgb(5, 138, 255);
+}
+
+.login-form label {
     font-weight: bold;
-    color: hsl(245, 94%, 43%);
+    display: block;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.login-account, .register-account{
     text-align: center;
+    font-size: 23px;
+    font-weight: bold;
 }
 
 input[type="text"],
@@ -120,3 +144,4 @@ ul.errorlist {
     margin-bottom: 10px;
     font-size: 0.9rem;
 }
+
