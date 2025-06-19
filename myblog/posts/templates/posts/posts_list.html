@@ -14,9 +14,9 @@
                     <a href="{% url 'posts:page' slug=post.slug %}">
                         {{ post.title }}
                     </a>
-                </h2>
-                <p>{{ post.date }}</p>
+                </h2>           
                 <p>{{ post.body }}</p>
+                <p>{{ post.date }} by {{ post.author }}</p>
             </article>
         {% endfor %}
         
