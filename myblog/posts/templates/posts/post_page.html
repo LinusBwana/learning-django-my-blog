@@ -10,6 +10,19 @@
         <img src="{{ post.banner.url }}" alt="{{ post.title }}" 
             class="img-fluid rounded shadow-lg d-block mx-auto mb-4 banner-img"/>
         <p>{{ post.body }}</p>
-        <p>{{ post.date }}</p> 
+        <p>
+            
+            {% if post.last_updated > post.date %}
+                <em class="text-success ms-2">edited</em>
+                on {{ post.last_updated }}
+            {% else %}
+                Posted on {{ post.date }}
+            {% endif %}
+
+        </p> 
+
+        {% if request.user == post.author %}
+            <a href="{% url 'posts:edit' slug=post.slug %}" class="btn btn-danger"> Edit Post</a>
+        {% endif %}
     </section>    
 {% endblock content %}
