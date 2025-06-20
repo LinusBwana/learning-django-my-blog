@@ -1,3 +1,4 @@
+from ast import Delete
 from django.shortcuts import redirect, render
 from .models import Post
 from django.contrib.auth.decorators import login_required
@@ -40,3 +41,12 @@ def post_edit(request, slug):
     else:
         form = CreatePost(instance=post)
     return render(request, 'posts/post_edit.html', { 'form': form})
+
+@login_required(login_url="users:login")
+def post_delete(request, slug):
+    post = Post.objects.get(slug=slug)
+
+    if request.user == post.author:
+        
+        post.delete()
+        return redirect('posts:posts')

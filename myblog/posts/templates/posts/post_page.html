@@ -22,7 +22,8 @@
         </p> 
 
         {% if request.user == post.author %}
-            <a href="{% url 'posts:edit' slug=post.slug %}" class="btn btn-danger"> Edit Post</a>
+            <a href="{% url 'posts:edit' slug=post.slug %}" class="btn btn-success"> Edit Post</a>
+            <a href="{% url 'posts:delete' slug=post.slug %}" class="btn btn-danger"> Delete Post</a>
         {% endif %}
     </section>    
 {% endblock content %}
